@@ -1,38 +1,20 @@
 import java.sql.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Oracle database = new Oracle("a2023000972", "a1234");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\n  -- Menu -- ");
+        System.out.println("\n1 - Adicionar funcionário\n2 - Buscar funcionário\n3 - Listar todos funcionários\n4 - Remover funcionário\n5 - Sair\n");
+        int option = scanner.nextInt();
+
+        switch (option) {
+
         
-        Connection connection = database.getConnection();
-        PreparedStatement preparedStatement = null;
-
-        String insertTableSQL = "INSERT INTO Func"
-            + "(func_id, nome, salario, dept_id) VALUES"
-            + "(?, ?, ?, ?)";
-
-        try{
-            preparedStatement = connection.prepareStatement(insertTableSQL);
-
-            preparedStatement.setInt(1, 6);
-            preparedStatement.setString(2, "Java");
-            preparedStatement.setDouble(3, 1000);
-            preparedStatement.setInt(4, 1);
-
-            preparedStatement.executeUpdate();
-            System.out.println("Record is inserted into Func table!");
-
-        } catch(SQLException e){
-            System.out.println("Erro 1!");
-            e.getStackTrace();
-        } finally{
-            try{
-                if(preparedStatement != null) preparedStatement.close();
-                if(connection != null) connection.close();
-
-            } catch(SQLException e){
-                e.printStackTrace();
-            }
+            default:
+                break;
         }
     }
 }
