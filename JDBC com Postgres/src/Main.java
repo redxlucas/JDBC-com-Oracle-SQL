@@ -6,15 +6,12 @@ public class Main {
         Oracle database = new Oracle("a2023000972", "a1234");
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\n  -- Menu -- ");
-        System.out.println("\n1 - Adicionar funcionário\n2 - Buscar funcionário\n3 - Listar todos funcionários\n4 - Remover funcionário\n5 - Sair\n");
-        int option = scanner.nextInt();
+        if(database.getConnection() != null){
+            database.getOne(2);
 
-        switch (option) {
-
-        
-            default:
-                break;
+            System.out.println("\nNome: " + database.getName()
+            + "\nQuantidade: " + database.getQuantity()
+            + "\nValor por unidade: " + database.getValue());
         }
     }
 }
