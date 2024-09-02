@@ -48,7 +48,7 @@ public class Oracle {
      * @param value : valor do item.
      */
     public void insert(Integer id, String name, Integer quantity, Double value){
-        Oracle database = new Oracle("a2023000972", "a1234");
+        Oracle database = new Oracle(" ", " ");
         Connection connection = database.getConnection();
         PreparedStatement preparedStatement = null;
 
@@ -86,7 +86,7 @@ public class Oracle {
      * @return Se item for encontrado, o retorna. Caso contrário, retorna null.
      */
     public Items getOne(int id){
-        Oracle database = new Oracle("a2023000972", "a1234");
+        Oracle database = new Oracle(" ", " ");
         Connection connection = database.getConnection();
         PreparedStatement preparedStatement = null;
         Items items = null;
@@ -125,7 +125,7 @@ public class Oracle {
      * @return Lista com todos itens.
      */
     public List<Items> getAll(){
-        Oracle database = new Oracle("a2023000972", "a1234");
+        Oracle database = new Oracle(" ", " ");
         Connection connection = database.getConnection();
         Statement statement = null;
 
@@ -165,7 +165,7 @@ public class Oracle {
      * @param value : valor a ser atualizado do item.
      */
     public void update(Integer id, String name, Integer quantity, Double value){
-        Oracle database = new Oracle("a2023000972", "a1234");
+        Oracle database = new Oracle(" ", " ");
         Connection connection = database.getConnection();
         PreparedStatement preparedStatement = null;
 
@@ -199,7 +199,7 @@ public class Oracle {
      */
 
     public boolean delete(int id){
-        Oracle database = new Oracle("a2023000972", "a1234");
+        Oracle database = new Oracle(" ", " ");
         Connection connection = database.getConnection();
         PreparedStatement preparedStatement = null;
 
